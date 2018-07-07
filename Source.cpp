@@ -7,7 +7,7 @@ int main()
 {
 	sf::Font font;
 
-	if (!font.loadFromFile("sansation.ttf")) {
+	if (!font.loadFromFile("Code Files/sansation.ttf")) {
 		std::cout << "sansation.ttf Load Error" << std::endl;
 		return EXIT_FAILURE;
 	}

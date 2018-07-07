@@ -11,8 +11,8 @@ Particle::Particle()
 	accelerationX = 0;
 	accelerationY = 0;
 
-	rect.setFillColor(sf::Color(255, 255, 255, 10));
-	rect.setSize(sf::Vector2f(1,1));
+	rect.setFillColor(sf::Color(255, 255, 255, 200));
+	rect.setSize(sf::Vector2f(4,4));
 	rect.setOrigin(rect.getSize().x / 2, rect.getSize().y / 2);
 }
 
@@ -81,8 +81,8 @@ void Particle::Update(Clock *clock, Controls* controls, const int pI, const int 
 	speedX += accelerationX;
 	speedY += accelerationY;
 
-	speedX = speedX * .995f;
-	speedY = speedY * .995f;
+	speedX = speedX * .9999f;
+	speedY = speedY * .9999f;//slight friction
 
 	velocityX = speedX * time;
 	velocityY = speedY * time;

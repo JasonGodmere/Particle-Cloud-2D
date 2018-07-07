@@ -10,7 +10,7 @@ Cloud::Cloud(sf::RenderWindow& window)
 		for (int j = 0; j < size / 2; j++)
 		{
 			particlesI.push_back(particle);
-			particlesI[j].SetPosition(i * 10 + 500, j * 10 + 300);
+			particlesI[j].SetPosition(i * 20 + 500, j * 20 + 300);
 		}
 		particles.push_back(particlesI);
 	}
@@ -34,17 +34,14 @@ void Cloud::Draw(Clock* clock, Controls* controls, sf::RenderWindow& window)
 {
 	Cloud::Update(clock, window);
 
-	if (controls->space)
+	for (int i = 0; i < size; i++)
 	{
-		for (int i = 0; i < size; i++)
+		for (int j = 0; j < size / 2; j++)
 		{
-			for (int j = 0; j < size / 2; j++)
-			{
-				particles[i][j].Draw(clock, controls, i, j, size, particles, window);
+			particles[i][j].Draw(clock, controls, i, j, size, particles, window);
 
-				//if (particles[i].posX < window.getSize().x && particles[i].posY < window.getSize().y)
-				//	densities[(int)particles[i].posY][(int)particles[i].posX] = 1;
-			}
+			//if (particles[i].posX < window.getSize().x && particles[i].posY < window.getSize().y)
+			//	densities[(int)particles[i].posY][(int)particles[i].posX] = 1;
 		}
 	}
 }
