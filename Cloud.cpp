@@ -10,7 +10,7 @@ Cloud::Cloud(sf::RenderWindow& window)
 		for (int j = 0; j < size / 2; j++)
 		{
 			particlesI.push_back(particle);
-			particlesI[j].SetPosition(i * 10 + 500, j * 10 + 300);
+			particlesI[j].SetPosition(i * 30 + 400, j * 30 + 200);
 		}
 		particles.push_back(particlesI);
 	}
